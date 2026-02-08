@@ -707,37 +707,108 @@ body {
 
 /* Responsive */
 @media (max-width: 768px) {
-    .hero-content h1 {
-        font-size: 2.5rem;
+    .navbar .container {
+        justify-content: center;
+        padding: 0.75rem 16px;
     }
 
     .nav-menu {
-        gap: 1.2rem;
-        font-size: 0.9rem;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 1rem 1.5rem;
+    }
+
+    .nav-menu a {
+        font-size: 0.75rem;
+        letter-spacing: 0.5px;
+    }
+
+    .hero {
+        min-height: auto;
+        padding: 5rem 1.5rem;
+    }
+
+    .hero-content {
+        grid-template-columns: 1fr;
+        text-align: center;
+        gap: 2rem;
+    }
+
+    .hero-text h1 {
+        font-size: 2.6rem;
+    }
+
+    .hero-subtitle {
+        font-size: 1.2rem;
+    }
+
+    .hero-description {
+        font-size: 0.95rem;
+        letter-spacing: 1px;
+    }
+
+    .hero-button {
+        justify-content: center;
+    }
+
+    .btn {
+        padding: 0.9rem 2rem;
+        font-size: 0.95rem;
     }
 
     .section-title {
-        font-size: 1.8rem;
-        margin-bottom: 2rem;
+        font-size: 2rem;
+        margin-bottom: 2.5rem;
     }
 
-    .skills-grid {
+    .about-text {
         grid-template-columns: 1fr;
+        gap: 1.5rem;
     }
 
-    .projects-grid {
-        grid-template-columns: 1fr;
+    .about-text p:first-of-type,
+    .about-text p:nth-of-type(2),
+    .about-text p:last-of-type {
+        grid-column: 1 / -1;
     }
 
-    .cv-content {
-        grid-template-columns: 1fr;
+    .about-text p:last-of-type {
+        padding: 1.5rem;
     }
 
+    .skills-grid,
+    .projects-grid,
+    .cv-content,
     .contact-info {
         grid-template-columns: 1fr;
     }
 
-    .hero {
-        padding: 6rem 2rem;
+    .skill-card,
+    .project-card,
+    .contact-item {
+        padding: 2rem;
+    }
+
+    .contact-content > p {
+        font-size: 1.4rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .hero-text h1 {
+        font-size: 2.1rem;
+    }
+
+    .hero-description {
+        font-size: 0.85rem;
+    }
+
+    .section-title {
+        font-size: 1.7rem;
+    }
+
+    .btn {
+        width: 100%;
+        text-align: center;
     }
 }
