@@ -67,3 +67,49 @@ window.addEventListener('load', () => {
 // Dinamik yıl güncelleme
 document.querySelector('.footer p').innerHTML = 
     `&copy; ${new Date().getFullYear()} Elektrik-Elektronik Mühendisi. Tüm hakları saklıdır.`;
+
+// Gerçek zamanlı sayfa görüntülenme sayacı (CountAPI kullanarak)
+async function updatePageViews() {
+    try {
+        const response = await fetch('https://api.countapi.xyz/hit/enesdursun-me/visits');
+        const data = await response.json();
+        document.getElementById('pageViews').textContent = data.value;
+    } catch (error) {
+        console.error('Ziyaretçi sayısı yüklenemedi:', error);
+        document.getElementById('pageViews').textContent = '---';
+    }
+}
+
+// Gerçek zamanlı CV indirme sayacı
+async function updateCVDownloads() {
+    try {
+        const response = await fetch('https://api.countapi.xyz/hit/enesdursun-me/cv-downloads');
+        const data = await response.json();
+        document.getElementById('cvDownloads').textContent = data.value;
+    } catch (error) {
+        console.error('İndirme sayısı güncellenemedi:', error);
+    }
+}
+
+// CV indirme sayısını göster (sadece görüntüle, artırma)
+async function getCVDownloads() {
+    try {
+        const response = await fetch('https://api.countapi.xyz/get/enesdursun-me/cv-downloads');
+        const data = await response.json();
+        document.getElementById('cvDownloads').textContent = data.value || 0;
+    } catch (error) {
+        console.error('İndirme sayısı yüklenemedi:', error);
+        document.getElementById('cvDownloads').textContent = '0';
+    }
+}
+
+// Sayfa yüklendiğinde ziyaretçi sayısını artır ve göster
+updatePageViews();
+
+// CV indirme sayısını göster (artırma)
+getCVDownloads();
+
+// CV indirme butonuna tıklama eventi
+document.getElementById('cvDownloadBtn').addEventListener('click', function() {
+    updateCVDownloads();
+});

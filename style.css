@@ -695,6 +695,59 @@ body {
     z-index: 2;
 }
 
+/* İstatistikler Bölümü */
+.stats-section {
+    background: var(--gradient-dark);
+    padding: 4rem 0;
+    border-top: 1px solid var(--border-color);
+}
+
+.stats-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 2rem;
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+.stat-card {
+    background: var(--white);
+    padding: 2rem;
+    border-radius: 15px;
+    text-align: center;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+    transition: all 0.3s ease;
+}
+
+.stat-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 25px rgba(99, 102, 241, 0.15);
+}
+
+.stat-card i {
+    font-size: 2.5rem;
+    background: var(--gradient-1);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    margin-bottom: 1rem;
+}
+
+.stat-number {
+    font-size: 2.5rem;
+    font-weight: 900;
+    color: var(--text-color);
+    margin: 0.5rem 0;
+}
+
+.stat-label {
+    font-size: 1rem;
+    color: var(--light-text);
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
 /* Footer */
 .footer {
     background: var(--light-bg);
@@ -779,13 +832,15 @@ body {
     .skills-grid,
     .projects-grid,
     .cv-content,
-    .contact-info {
+    .contact-info,
+    .stats-grid {
         grid-template-columns: 1fr;
     }
 
     .skill-card,
     .project-card,
-    .contact-item {
+    .contact-item,
+    .stat-card {
         padding: 2rem;
     }
 
