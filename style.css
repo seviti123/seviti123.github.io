@@ -48,6 +48,11 @@ body {
     transition: background-color 0.3s ease, color 0.3s ease;
 }
 
+html {
+    -webkit-text-size-adjust: 100%;
+    text-size-adjust: 100%;
+}
+
 .container {
     max-width: 1200px;
     margin: 0 auto;
@@ -888,6 +893,7 @@ body {
     .hero {
         min-height: auto;
         padding: 3.75rem 1.5rem 4rem;
+        background-attachment: scroll;
     }
 
     .hero-content {
