@@ -33,6 +33,8 @@ body {
     max-width: 1200px;
     margin: 0 auto;
     padding: 0 20px;
+    position: relative;
+    z-index: 2;
 }
 
 /* Navigasyon */
@@ -78,6 +80,8 @@ body {
     text-transform: uppercase;
     font-size: 0.85rem;
     letter-spacing: 1px;
+    z-index: 10;
+    pointer-events: auto;
 }
 
 .nav-menu a::after {
@@ -115,6 +119,18 @@ body {
     justify-content: center;
     position: relative;
     overflow: hidden;
+}
+
+.particle-canvas {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: auto;
+    z-index: 1;
+    cursor: pointer;
+    touch-action: manipulation;
 }
 
 .hero::before {
@@ -210,6 +226,8 @@ body {
     display: flex;
     gap: 1rem;
     align-items: center;
+    position: relative;
+    z-index: 10;
 }
 
 @media (max-width: 768px) {
@@ -263,6 +281,9 @@ body {
     cursor: pointer;
     font-size: 1.05rem;
     letter-spacing: 0.5px;
+    position: relative;
+    z-index: 10;
+    pointer-events: auto;
 }
 
 .btn-primary {
@@ -300,6 +321,7 @@ body {
     padding-bottom: 1.5rem;
     font-weight: 900;
     letter-spacing: -1px;
+    z-index: 2;
 }
 
 .section-title::after {
@@ -320,6 +342,8 @@ body {
     background: var(--white);
     border-top: 1px solid var(--border-color);
     border-bottom: 1px solid var(--border-color);
+    position: relative;
+    overflow: hidden;
 }
 
 .about-text {
@@ -329,6 +353,8 @@ body {
     grid-template-columns: 1fr 1fr;
     gap: 3rem;
     align-items: center;
+    position: relative;
+    z-index: 2;
 }
 
 .about-text h2 {
@@ -338,6 +364,8 @@ body {
     margin-bottom: 2rem;
     grid-column: 1 / -1;
     text-align: center;
+    position: relative;
+    z-index: 2;
 }
 
 .about-text p {
@@ -374,6 +402,7 @@ body {
     background: linear-gradient(180deg, #ffffff 0%, #f1f5f9 100%);
     border-top: 1px solid var(--border-color);
     position: relative;
+    overflow: hidden;
 }
 
 .skills h2 {
@@ -382,6 +411,8 @@ body {
     margin-bottom: 3rem;
     color: var(--text-color);
     font-weight: 900;
+    position: relative;
+    z-index: 2;
 }
 
 .skills-grid {
@@ -390,6 +421,8 @@ body {
     gap: 2.5rem;
     max-width: 1400px;
     margin: 0 auto;
+    position: relative;
+    z-index: 2;
 }
 
 .skill-card {
@@ -402,6 +435,8 @@ body {
     position: relative;
     overflow: hidden;
     box-shadow: 0 8px 30px rgba(0, 0, 0, 0.08);
+    z-index: 3;
+    pointer-events: auto;
 }
 
 .skill-card::before {
@@ -475,6 +510,8 @@ body {
     background: linear-gradient(180deg, #f1f5f9 0%, #ffffff 100%);
     border-top: 1px solid var(--border-color);
     border-bottom: 1px solid var(--border-color);
+    position: relative;
+    overflow: hidden;
 }
 
 .projects h2 {
@@ -483,6 +520,8 @@ body {
     margin-bottom: 3rem;
     color: var(--text-color);
     font-weight: 900;
+    position: relative;
+    z-index: 2;
 }
 
 .projects-grid {
@@ -491,6 +530,8 @@ body {
     gap: 3rem;
     max-width: 1400px;
     margin: 0 auto;
+    position: relative;
+    z-index: 2;
 }
 
 .project-card {
@@ -504,6 +545,8 @@ body {
     position: relative;
     display: flex;
     flex-direction: column;
+    z-index: 3;
+    pointer-events: auto;
 }
 
 .project-card::before {
@@ -566,6 +609,8 @@ body {
     background: linear-gradient(180deg, #ffffff 0%, #f1f5f9 100%);
     border-top: 1px solid var(--border-color);
     border-bottom: 1px solid var(--border-color);
+    position: relative;
+    overflow: hidden;
 }
 
 .cv-section h2 {
@@ -574,6 +619,8 @@ body {
     margin-bottom: 3rem;
     color: var(--text-color);
     font-weight: 900;
+    position: relative;
+    z-index: 2;
 }
 
 .cv-content {
@@ -584,6 +631,8 @@ body {
     max-width: 1400px;
     margin-left: auto;
     margin-right: auto;
+    position: relative;
+    z-index: 2;
 }
 
 .cv-column h3 {
@@ -651,6 +700,8 @@ body {
     display: block;
     width: fit-content;
     margin: 2rem auto 0;
+    position: relative;
+    z-index: 2;
 }
 
 /* İletişim Bölümü */
@@ -658,11 +709,15 @@ body {
     padding: 6rem 2rem;
     background: linear-gradient(135deg, rgba(99, 102, 241, 0.05) 0%, rgba(236, 72, 153, 0.05) 100%);
     border-top: 1px solid var(--border-color);
+    position: relative;
+    overflow: hidden;
 }
 
 .contact-content {
     max-width: 1400px;
     margin: 0 auto;
+    position: relative;
+    z-index: 2;
 }
 
 .contact-content > p {
@@ -696,6 +751,8 @@ body {
     border: 2px solid var(--border-color);
     position: relative;
     overflow: hidden;
+    z-index: 3;
+    pointer-events: auto;
 }
 
 .contact-item::before {
