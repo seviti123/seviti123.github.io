@@ -1,3 +1,33 @@
+// Tema değiştirme
+const themeToggle = document.getElementById('themeToggle');
+const html = document.documentElement;
+const themeIcon = themeToggle.querySelector('i');
+
+// Kaydedilmiş temayı yükle
+const savedTheme = localStorage.getItem('theme') || 'light';
+html.setAttribute('data-theme', savedTheme);
+if (savedTheme === 'dark') {
+    themeIcon.classList.remove('fa-moon');
+    themeIcon.classList.add('fa-sun');
+}
+
+themeToggle.addEventListener('click', () => {
+    const currentTheme = html.getAttribute('data-theme');
+    const newTheme = currentTheme === 'light' ? 'dark' : 'light';
+    
+    html.setAttribute('data-theme', newTheme);
+    localStorage.setItem('theme', newTheme);
+    
+    // İkon değiştir
+    if (newTheme === 'dark') {
+        themeIcon.classList.remove('fa-moon');
+        themeIcon.classList.add('fa-sun');
+    } else {
+        themeIcon.classList.remove('fa-sun');
+        themeIcon.classList.add('fa-moon');
+    }
+});
+
 // Navbar'da aktivasyon göstergesi
 document.querySelectorAll('.nav-menu a').forEach(link => {
     link.addEventListener('click', (e) => {
