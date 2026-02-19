@@ -50,31 +50,9 @@ body {
 
 .navbar .container {
     display: flex;
-    justify-content: space-between;
+    justify-content: flex-end;
     align-items: center;
     padding: 1rem 20px;
-}
-
-.logo {
-    font-size: 1.8rem;
-    font-weight: 900;
-    background: var(--gradient-1);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    background-clip: text;
-    letter-spacing: -2px;
-    text-decoration: none;
-    transition: all 0.3s ease;
-    padding: 0.5rem 1rem;
-    border-radius: 0.5rem;
-}
-
-.logo:hover {
-    background: var(--gradient-accent);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    background-clip: text;
-    transform: scale(1.05);
 }
 
 .nav-menu {
@@ -808,12 +786,8 @@ body {
 /* Responsive */
 @media (max-width: 768px) {
     .navbar .container {
-        justify-content: space-between;
+        justify-content: center;
         padding: 0.75rem 16px;
-    }
-
-    .logo {
-        font-size: 1.5rem;
     }
 
     .nav-menu {
